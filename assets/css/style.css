@@ -1,0 +1,1524 @@
+/* ========== Start Global CSS ========== */
+@font-face {
+    font-family: "Futura";
+    src: url("../fonts/FuturaStd-Book.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Futura Condensed";
+    src: url("../fonts/FuturaStd-Condensed.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Futura Condensed";
+    src: url("../fonts/FuturaStd-CondensedBold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Futura Condensed";
+    src: url("../fonts/FuturaStd-CondensedExtraBd.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Futura Bold";
+    src: url("../fonts/Futura Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+:root {
+    --primary: #fff;
+    --secondary: #aaa;
+    --bg: #080808;
+    --text: #fff;
+    --container: 1440px;
+    --font-heading: "Futura Condensed", Arial, sans-serif;
+    --font-body: "Futura", Arial, sans-serif;
+    --future-bold: "Futura Bold", sans-serif;
+}
+/* ========== End Global CSS ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: inherit;
+}
+img,
+video {
+    max-width: 100%;
+    display: block;
+}
+button {
+    font: inherit;
+}
+.container {
+    max-width: var(--container);
+}
+/* ========== End Global CSS ========== */
+
+/* ========== Start Navbar CSS ========== */
+.pf-header {
+    position: relative;
+    z-index: 9998;
+}
+.pf-logo {
+    position: fixed;
+    top: 10px;
+    left: 45px;
+    width: 45px;
+    display: block;
+    z-index: 9999;
+}
+.pf-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.pf-eyes {
+    position: fixed;
+    top: 15px;
+    right: 45px;
+    width: 55px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
+.pf-eye {
+    position: relative;
+    width: 15px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotate(-7deg);
+}
+.pf-eye:nth-child(2) {
+    transform: rotate(7deg);
+}
+.pf-pupil {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 9px;
+    background: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+.pf-side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    padding: 0 130px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #050505;
+    z-index: 9998;
+}
+.pf-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 35px;
+}
+.pf-nav-links a {
+    position: relative;
+    padding: 23px 0;
+    color: #aaa;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.pf-nav-links a:hover,
+.pf-nav-links a.active {
+    color: #fff;
+}
+
+.pf-nav-links a:hover::after,
+.pf-nav-links a.active::after {
+    width: 100%;
+}
+.pf-nav-links a:focus-visible,
+.pf-logo:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+}
+.pf-menu-toggle,
+.pf-menu-close,
+.pf-mobile-nav-header,
+.pf-menu-overlay {
+    display: none;
+}
+@media (max-width: 991px) {
+    .pf-side-nav {
+        height: 60px;
+        padding: 0 95px 0 90px;
+    }
+    .pf-nav-links {
+        gap: 25px;
+    }
+    .pf-logo {
+        left: 25px;
+        width: 40px;
+    }
+    .pf-eyes {
+        top: 12px;
+        right: 25px;
+    }
+}
+@media (max-width: 767px) {
+    .pf-logo {
+        top: 20px;
+        left: 20px;
+        width: 42px;
+    }
+    .pf-eyes {
+        display: none;
+    }
+    .pf-menu-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        background: #111;
+        cursor: pointer;
+        z-index: 9999;
+        transition:
+            background 0.35s ease,
+            border-color 0.35s ease;
+    }
+    .pf-menu-toggle span {
+        display: block;
+        width: 18px;
+        height: 1.5px;
+        background: #fff;
+        transition:
+            transform 0.4s ease,
+            width 0.4s ease;
+    }
+    .pf-menu-toggle span:nth-child(2) {
+        width: 13px;
+        margin-left: 5px;
+    }
+    .pf-menu-toggle:hover {
+        background: #222;
+        border-color: #fff;
+    }
+    .pf-menu-toggle:hover span:first-child {
+        transform: translateX(4px);
+        width: 13px;
+    }
+    .pf-menu-toggle:hover span:nth-child(2) {
+        transform: translateX(-4px);
+        width: 18px;
+    }
+    .pf-side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        max-height: 85dvh;
+        padding: 18px 22px 30px;
+        display: block;
+        background: #050505;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        transform: translateY(-105%);
+        visibility: hidden;
+        pointer-events: none;
+        overflow-y: auto;
+        z-index: 10001;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        transition:
+            transform 0.7s cubic-bezier(0.76, 0, 0.24, 1),
+            visibility 0.7s;
+    }
+    .pf-side-nav.open {
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .pf-mobile-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 30px;
+    }
+    .pf-mobile-brand {
+        display: inline-flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    .pf-mobile-brand img {
+        display: block;
+        width: 45px;
+        height: auto;
+        max-height: 45px;
+        object-fit: contain;
+    }
+    .pf-menu-close {
+        position: relative;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    .pf-menu-close span {
+        position: absolute;
+        width: 22px;
+        height: 1.5px;
+        background: #fff;
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pf-menu-close span:first-child {
+        transform: rotate(45deg);
+    }
+    .pf-menu-close span:last-child {
+        transform: rotate(-45deg);
+    }
+    .pf-menu-close:hover span:first-child {
+        transform: rotate(135deg);
+    }
+    .pf-menu-close:hover span:last-child {
+        transform: rotate(45deg);
+    }
+    .pf-nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0;
+    }
+    .pf-nav-links a {
+        display: block;
+        width: max-content;
+        padding: 10px 0;
+        color: #e8e8e8;
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.3;
+        letter-spacing: -0.5px;
+        opacity: 0;
+        transform: translateY(-18px);
+        transition:
+            opacity 0.45s ease,
+            transform 0.45s ease,
+            color 0.3s ease;
+    }
+    .pf-side-nav.open .pf-nav-links a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .pf-side-nav.open .pf-nav-links a:nth-child(1) {
+        transition-delay: 0.2s;
+    }
+    .pf-side-nav.open .pf-nav-links a:nth-child(2) {
+        transition-delay: 0.27s;
+    }
+    .pf-side-nav.open .pf-nav-links a:nth-child(3) {
+        transition-delay: 0.34s;
+    }
+    .pf-side-nav.open .pf-nav-links a:nth-child(4) {
+        transition-delay: 0.41s;
+    }
+    .pf-nav-links a::after {
+        bottom: 6px;
+        height: 1px;
+        background: #fff;
+    }
+    .pf-nav-links a.active {
+        color: #777;
+    }
+    .pf-menu-overlay {
+        position: fixed;
+        inset: 0;
+        display: block;
+        background: rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: 10000;
+        transition:
+            opacity 0.5s ease,
+            visibility 0.5s ease;
+    }
+    .pf-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    body.pf-menu-open {
+        overflow: hidden;
+    }
+}
+@media (max-width: 400px) {
+    .pf-side-nav {
+        padding: 15px 20px 25px;
+    }
+    .pf-mobile-nav-header {
+        padding-bottom: 25px;
+    }
+    .pf-menu-toggle {
+        top: 17px;
+        right: 15px;
+    }
+    .pf-mobile-brand img {
+        width: 40px;
+    }
+    .pf-nav-links a {
+        font-size: 18px;
+        padding: 9px 0;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-side-nav,
+    .pf-nav-links a,
+    .pf-menu-toggle,
+    .pf-menu-toggle span,
+    .pf-menu-close span,
+    .pf-menu-overlay {
+        transition: none;
+    }
+    .pf-side-nav.open .pf-nav-links a {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* ========== End Navbar CSS ========== */
+
+/* ========== Start Hero Section CSS ========== */
+.pf-hero {
+    --hero-scale: min(1vw, 1.78svh);
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 0;
+    background: #000;
+    overflow: hidden;
+    isolation: isolate;
+}
+.pf-hero-background-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: max-content;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none;
+    animation: pfTextEnter 1.3s ease both;
+}
+.pf-hero-title-line {
+    position: relative;
+    width: max-content;
+    max-width: none;
+}
+.pf-bg-first,
+.pf-bg-second {
+    display: block;
+    width: max-content;
+    font-family: "Futura Condensed", Arial, sans-serif;
+    font-size: 240px;
+    font-weight: 800;
+    line-height: 0.82;
+    letter-spacing: -0.025em;
+    color: #f04425;
+    white-space: nowrap;
+}
+.pf-bg-nickname {
+    position: absolute;
+    left: 626px;
+    top: 74%;
+    right: auto;
+    bottom: auto;
+    transform: translateY(-50%);
+    font-family: "Futura Condensed", Arial, sans-serif;
+    font-size: 94px;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+}
+.pf-hero-media {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: calc(var(--hero-scale) * 47);
+    height: 80%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    pointer-events: none;
+    animation: heroEnter 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.pf-hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+.pf-hero-bottom {
+    position: absolute;
+    bottom: clamp(15px, 2.5svh, 35px);
+    left: 3%;
+    right: 3%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 20px;
+    z-index: 3;
+    animation: bottomEnter 1.2s 0.3s both;
+}
+.pf-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 48px;
+    margin-left: auto;
+    padding: 5px 6px 5px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+    color: #fff;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        border-color 0.4s ease,
+        transform 0.4s ease;
+}
+.pf-resume-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+.pf-resume-icon svg {
+    width: 17px;
+    height: 17px;
+}
+.pf-resume-btn:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-3px);
+}
+.pf-resume-btn:hover .pf-resume-icon {
+    background: #000;
+    color: #fff;
+    transform: translateY(2px);
+}
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%) scale(0.93);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+@keyframes bottomEnter {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes pfTextEnter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@media (min-width: 768px) and (max-aspect-ratio: 4/3) {
+    .pf-hero {
+        --hero-scale: min(1vw, 1.45svh);
+    }
+    .pf-bg-first,
+    .pf-bg-second {
+        font-size: 80px;
+    }
+    .pf-hero-media {
+        width: calc(var(--hero-scale) * 55);
+        height: 75%;
+    }
+}
+@media (max-width: 767px) {
+    .pf-hero {
+        --hero-scale: 1vw;
+        height: 100svh;
+        min-height: 580px;
+    }
+    .pf-hero-background-text {
+        top: 39%;
+        left: 50%;
+        width: max-content;
+        align-items: center;
+    }
+    .pf-bg-first,
+    .pf-bg-second {
+        font-size: 80px;
+        line-height: 0.86;
+        letter-spacing: -0.02em;
+    }
+    .pf-bg-nickname {
+        left: auto;
+        right: 0px;
+        top: 92px;
+        transform: none;
+        font-size: calc(var(--hero-scale) * 7);
+    }
+    .pf-hero-media {
+        top: 49%;
+        width: 100%;
+        height: 70%;
+    }
+    .pf-hero-bottom {
+        left: 20px;
+        right: 20px;
+        bottom: 25px;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .pf-resume-btn {
+        min-height: 40px;
+        margin-left: auto;
+        padding: 4px 5px 4px 12px;
+        gap: 8px;
+        font-size: 12px;
+    }
+    .pf-resume-icon {
+        width: 29px;
+        height: 29px;
+    }
+    .pf-resume-icon svg {
+        width: 15px;
+        height: 15px;
+    }
+}
+@media (max-width: 400px) {
+    .pf-bg-first,
+    .pf-bg-second {
+        font-size: 80px;
+    }
+    .pf-bg-nickname {
+        font-size: calc(var(--hero-scale) * 7);
+    }
+    .pf-resume-btn {
+        gap: 6px;
+        padding-left: 9px;
+        font-size: 11px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-hero-media,
+    .pf-hero-bottom,
+    .pf-hero-background-text {
+        animation: none;
+    }
+}
+
+/* ========== Start Hero Refresh Fix ========== */
+.pf-hero-background-text {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+}
+.pf-hero-media {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+}
+.pf-hero-bottom {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+/* ========== End Hero Refresh Fix ========== */
+
+/* ========== End Hero Section CSS ========== */
+
+/* ========== Start Profile Section CSS ========== */
+.pf-profile {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    padding: 130px 0 100px;
+    background: #080808;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    scroll-margin-top: 0;
+}
+.pf-profile .container {
+    width: 100%;
+    max-width: var(--container);
+    padding: 0 45px;
+    margin: 0 auto;
+}
+.pf-profile-content {
+    width: 100%;
+    max-width: 1250px;
+    padding-left: 35px;
+}
+.pf-profile-title {
+    margin: 0 0 12px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    color: #ef4921;
+    text-transform: uppercase;
+}
+.pf-profile-text {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    color: #e5e5e5;
+}
+.pf-profile .pf-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-profile .pf-reveal.pf-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.pf-profile-title.pf-reveal {
+    transition-delay: 0.1s;
+}
+.pf-profile-text.pf-reveal {
+    transition-delay: 0.2s;
+}
+@media (max-width: 1199px) {
+    .pf-profile {
+        padding: 110px 0 90px;
+    }
+    .pf-profile .container {
+        padding: 0 30px;
+    }
+    .pf-profile-content {
+        max-width: 100%;
+        padding-left: 15px;
+    }
+    .pf-profile-text {
+        max-width: 100%;
+        font-size: 22px;
+    }
+}
+@media (max-width: 991px) {
+    .pf-profile {
+        min-height: 85svh;
+        padding: 100px 0 80px;
+    }
+    .pf-profile-content {
+        max-width: 680px;
+        padding-left: 0;
+    }
+    .pf-profile-title {
+        font-size: 27px;
+    }
+    .pf-profile-text {
+        max-width: 100%;
+        font-size: 23px;
+        line-height: 1.6;
+    }
+}
+@media (max-width: 767px) {
+    .pf-profile {
+        min-height: auto;
+        padding: 85px 0 100px;
+    }
+    .pf-profile .container {
+        padding: 0 20px;
+    }
+    .pf-profile-content {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .pf-profile-title {
+        margin-bottom: 15px;
+        font-size: 25px;
+        letter-spacing: -0.5px;
+    }
+    .pf-profile-text {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 1.7;
+        letter-spacing: -0.2px;
+    }
+}
+@media (max-width: 400px) {
+    .pf-profile {
+        padding: 75px 0 85px;
+    }
+    .pf-profile-title {
+        font-size: 23px;
+    }
+    .pf-profile-text {
+        font-size: 20px;
+        line-height: 1.75;
+        max-width: 400px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-profile .pf-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* ========== End Profile Section CSS ========== */
+
+/* ========== Start Work Section CSS ========== */
+.pf-work {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    padding: 100px 0 120px;
+    background: #080808;
+    overflow: hidden;
+}
+.pf-work .container {
+    width: 100%;
+    max-width: var(--container);
+    padding: 0 45px;
+    margin: 0 auto;
+}
+.pf-work-title {
+    margin: 0 0 65px;
+    color: #fff;
+    font-size: clamp(55px, 7vw, 105px);
+    font-weight: 750;
+    line-height: 1;
+    letter-spacing: -5px;
+}
+.pf-work-title span {
+    color: #ef4921;
+}
+.pf-work-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+    align-items: start;
+    gap: 45px;
+}
+.pf-work-list {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.pf-work-item {
+    width: 100%;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+    background: transparent;
+    border: none;
+    color: #777;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        padding 0.4s ease,
+        background 0.4s ease;
+}
+.pf-work-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+}
+.pf-work-info small {
+    display: block;
+    color: #777;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.pf-work-item:hover .pf-work-info small,
+.pf-work-item.active .pf-work-info small {
+    color: #fff;
+    font-weight: 800;
+}
+.pf-work-item:focus-visible {
+    outline: 2px solid #ef4921;
+    outline-offset: 2px;
+}
+.pf-work-preview {
+    width: 100%;
+    min-width: 0;
+}
+.pf-work-image-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+.pf-work-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    background: #151515;
+    overflow: hidden;
+}
+.pf-work-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition:
+        opacity 0.3s ease,
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-work-image-wrap:hover .pf-work-image {
+    transform: scale(1.05);
+}
+.pf-work-image.is-changing {
+    opacity: 0;
+    transform: scale(1.07);
+}
+.pf-work-image-index {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+}
+.pf-work-image-link:focus-visible {
+    outline: 2px solid #ef4921;
+    outline-offset: 4px;
+}
+/* ========== Start Mobile Work CSS ========== */
+.pf-work-mobile {
+    display: none;
+}
+.pf-mobile-project {
+    width: 100%;
+    margin: 0 0 45px;
+}
+.pf-mobile-project:last-child {
+    margin-bottom: 0;
+}
+
+.pf-mobile-project-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.pf-mobile-project-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 3px;
+}
+.pf-mobile-project-title {
+    margin: 0;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+}
+.pf-mobile-project-arrow {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+.pf-mobile-project-category {
+    display: block;
+    margin-bottom: 14px;
+    color: #777;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+.pf-mobile-project-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #151515;
+    overflow: hidden;
+}
+.pf-mobile-project-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-mobile-project-link:hover .pf-mobile-project-image {
+    transform: scale(1.04);
+}
+.pf-mobile-project-link:hover .pf-mobile-project-arrow {
+    color: #ef4921;
+    transform: translate(3px, -3px);
+}
+.pf-mobile-project-link:focus-visible {
+    outline: 2px solid #ef4921;
+    outline-offset: 5px;
+}
+.pf-mobile-project.pf-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-mobile-project.pf-reveal.pf-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ========== End Mobile Work CSS ========== */
+@media (max-width: 1199px) {
+    .pf-work {
+        padding: 90px 0 100px;
+    }
+    .pf-work .container {
+        padding: 0 30px;
+    }
+    .pf-work-layout {
+        grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+        gap: 35px;
+    }
+    .pf-work-item {
+        min-height: 52px;
+    }
+    .pf-work-info small {
+        font-size: 23px;
+    }
+}
+@media (max-width: 991px) {
+    .pf-work {
+        min-height: auto;
+        padding: 80px 0 90px;
+    }
+    .pf-work-title {
+        margin-bottom: 45px;
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+    .pf-work-layout {
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: 25px;
+    }
+    .pf-work-item {
+        min-height: 50px;
+        gap: 12px;
+        padding: 10px 5px;
+    }
+    .pf-work-info small {
+        font-size: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .pf-work {
+        min-height: auto;
+        padding: 65px 0 80px;
+    }
+    .pf-work .container {
+        padding: 0 20px;
+    }
+    .pf-work-title {
+        margin-bottom: 45px;
+        font-size: 50px;
+        letter-spacing: -2px;
+    }
+    .pf-work-layout {
+        display: none;
+    }
+    .pf-work-mobile {
+        display: block;
+        width: 100%;
+    }
+}
+@media (max-width: 400px) {
+    .pf-work-title {
+        font-size: 43px;
+    }
+    .pf-mobile-project {
+        margin-bottom: 38px;
+    }
+    .pf-mobile-project-title {
+        font-size: 20px;
+    }
+    .pf-mobile-project-category {
+        font-size: 14px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-work-image,
+    .pf-work-item,
+    .pf-work-info small,
+    .pf-mobile-project-image,
+    .pf-mobile-project-arrow,
+    .pf-mobile-project.pf-reveal {
+        transition: none;
+    }
+    .pf-mobile-project.pf-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+/* ========== End Work Section CSS ========== */
+
+/* ========== Start Footer Section CSS ========== */
+.pf-footer {
+    position: relative;
+    width: 100%;
+    padding: 60px 0 35px;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+.pf-footer .container {
+    width: 100%;
+    max-width: var(--container);
+    padding: 0 45px;
+    margin: 0 auto;
+}
+.pf-footer-main {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 0.45fr;
+    gap: 65px;
+    align-items: start;
+    padding-bottom: 110px;
+}
+.pf-footer-title {
+    margin: 0;
+    font-size: 95px;
+    font-weight: 750;
+    line-height: 0.95;
+    letter-spacing: -5px;
+}
+.pf-footer-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 8px;
+}
+.pf-footer-line > span {
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition:
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.8s ease;
+}
+.pf-footer-orange {
+    color: #ef4921;
+}
+.pf-footer.pf-footer-visible .pf-footer-line:nth-child(1) > span {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+}
+.pf-footer.pf-footer-visible .pf-footer-line:nth-child(2) > span {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.35s;
+}
+.pf-footer.pf-footer-visible .pf-footer-line:nth-child(3) > span {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+.pf-footer-contact,
+.pf-footer-social {
+    padding-top: 20px;
+}
+.pf-footer-contact h3,
+.pf-footer-social h3 {
+    margin: 0 0 35px;
+    color: #ef4921;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+}
+.pf-footer-contact a,
+.pf-footer-location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    color: #ddd;
+    font-size: 20px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.pf-footer-contact a:hover {
+    color: #ef4921;
+}
+.pf-footer-contact i,
+.pf-footer-location i {
+    flex-shrink: 0;
+    font-size: 21px;
+    color: #fff;
+}
+.pf-footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: max-content;
+    min-width: 130px;
+    margin-bottom: 20px;
+    color: #ddd;
+    font-size: 18px;
+    text-decoration: none;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+.pf-footer-social a i {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+.pf-footer-social a:hover {
+    color: #ef4921;
+    transform: translateX(5px);
+}
+.pf-footer-social a:hover i {
+    transform: translate(3px, -3px);
+}
+.pf-footer-reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-footer.pf-footer-visible .pf-footer-contact {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.45s;
+}
+.pf-footer.pf-footer-visible .pf-footer-social {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.65s;
+}
+.pf-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.pf-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+.pf-footer-brand img {
+    display: block;
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+.pf-footer-brand span {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Futura Condensed", Arial, sans-serif;
+}
+.pf-footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 14px;
+}
+@media (max-width: 1199px) {
+    .pf-footer {
+        padding: 90px 0 30px;
+    }
+    .pf-footer .container {
+        padding: 0 30px;
+    }
+    .pf-footer-main {
+        grid-template-columns: 1.2fr 1fr 0.5fr;
+        gap: 35px;
+        padding-bottom: 90px;
+    }
+    .pf-footer-title {
+        font-size: 75px;
+        letter-spacing: -4px;
+    }
+    .pf-footer-contact a,
+    .pf-footer-location {
+        font-size: 15px;
+    }
+}
+@media (max-width: 991px) {
+    .pf-footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+    .pf-footer-heading {
+        grid-column: 1/-1;
+    }
+    .pf-footer-title {
+        font-size: 85px;
+    }
+    .pf-footer-contact,
+    .pf-footer-social {
+        padding-top: 0;
+    }
+}
+@media (max-width: 767px) {
+    .pf-footer {
+        padding: 75px 0 25px;
+    }
+    .pf-footer .container {
+        padding: 0 20px;
+    }
+    .pf-footer-main {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-bottom: 65px;
+    }
+    .pf-footer-heading {
+        grid-column: auto;
+    }
+    .pf-footer-title {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+    .pf-footer-contact h3,
+    .pf-footer-social h3 {
+        margin-bottom: 25px;
+        font-size: 16px;
+    }
+    .pf-footer-contact a,
+    .pf-footer-location {
+        margin-bottom: 18px;
+        font-size: 16px;
+    }
+    .pf-footer-social a {
+        font-size: 17px;
+        margin-bottom: 17px;
+    }
+    .pf-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        padding-top: 25px;
+    }
+    .pf-footer-brand img {
+        width: 40px;
+        height: 40px;
+    }
+    .pf-footer-brand span {
+        font-size: 16px;
+    }
+    .pf-footer-bottom p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 400px) {
+    .pf-footer-title {
+        font-size: 53px;
+        letter-spacing: -2px;
+    }
+    .pf-footer-main {
+        gap: 35px;
+    }
+    .pf-footer-contact a,
+    .pf-footer-location {
+        font-size: 14px;
+        gap: 12px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-footer-line > span,
+    .pf-footer-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* ========== End Footer Section CSS ========== */
+
+/* ========== Start Back To Top CSS ========== */
+.pf-back-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ef4921;
+    border: 1px solid #ef4921;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease,
+        transform 0.4s ease,
+        background 0.3s ease;
+}
+.pf-back-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.pf-back-top svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+.pf-back-top:hover {
+    background: #fff;
+    border-color: #fff;
+    color: #080808;
+}
+.pf-back-top:hover svg {
+    transform: translateY(-4px);
+}
+.pf-back-top:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+}
+@media (max-width: 767px) {
+    .pf-back-top {
+        width: 42px;
+        height: 42px;
+        right: 18px;
+        bottom: 20px;
+    }
+    .pf-back-top svg {
+        width: 19px;
+        height: 19px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-back-top,
+    .pf-back-top svg {
+        transition: none;
+    }
+}
+/* ========== End Back To Top CSS ========== */

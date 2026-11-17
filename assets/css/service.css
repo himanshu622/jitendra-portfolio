@@ -1,0 +1,388 @@
+/* ========== Start Global CSS ========== */
+:root {
+    --primary: #ef4921;
+    --black: #080808;
+    --white: #fff;
+    --text: #aaa;
+    --border: #292929;
+    --container: 1500px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+button {
+    font: inherit;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.container {
+    width: 100%;
+    max-width: var(--container);
+    padding: 0 45px;
+    margin: 0 auto;
+}
+::selection {
+    background: var(--primary);
+    color: #fff;
+}
+/* ========== End Global CSS ========== */
+
+/* ========== Start KFC Inner Page CSS ========== */
+.pf-case-page {
+    background: #fff;
+    color: #080808;
+    overflow-x: clip;
+}
+.pf-case-page * {
+    box-sizing: border-box;
+}
+.pf-case-page .container {
+    width: 100%;
+    max-width: var(--container, 1500px);
+    padding: 0 45px;
+    margin: 0 auto;
+}
+.pf-case-page a {
+    text-decoration: none;
+}
+.pf-case-page img {
+    display: block;
+    max-width: 100%;
+}
+.pf-case-page figure {
+    margin: 0;
+}
+.pf-case-hero {
+    padding: 150px 0 20px;
+}
+.pf-case-top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #303030;
+}
+.pf-case-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #080808;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.pf-case-back span {
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+.pf-case-back:hover {
+    color: #080808;
+}
+.pf-case-back:hover span {
+    transform: translateX(-5px);
+}
+.pf-case-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+    padding: 20px 0 0;
+}
+.pf-case-title {
+    margin: 0;
+    color: #080808;
+    font-size: 25px;
+    font-weight: 600;
+    overflow: hidden;
+    font-family: "Futura Bold", sans-serif;
+}
+.pf-case-title > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: pf-title-up 1.2s 0.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.pf-case-intro {
+    width: 100%;
+    max-width: 650px;
+    margin: 0;
+    color: #777;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.3px;
+}
+.pf-case-hero-image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    margin-top: 20px;
+    background: transparent;
+    overflow: visible;
+}
+.pf-case-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+    transition: none;
+}
+.pf-case-hero-image:hover img {
+    transform: none;
+}
+.pf-case-gallery {
+    padding: 40px 0 100px;
+}
+.pf-case-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+.pf-case-gallery-item {
+    min-width: 0;
+    width: 100%;
+}
+.pf-case-gallery-wide {
+    grid-column: 1/-1;
+}
+.pf-case-gallery-image {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    background: transparent;
+    overflow: visible;
+}
+.pf-case-gallery-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+    transition: none;
+}
+.pf-case-gallery-item:hover img {
+    transform: none;
+}
+/* ========== End KFC Inner Page CSS ========== */
+
+/* ========== Start KFC Animation CSS ========== */
+.pf-case-page .pf-animate {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: pf-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.pf-case-top {
+    animation-delay: 0.1s;
+}
+.pf-case-intro {
+    animation-delay: 0.35s;
+}
+.pf-case-hero-image {
+    animation-delay: 0.5s;
+}
+.pf-case-page .pf-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pf-case-page .pf-reveal.pf-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes pf-fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes pf-title-up {
+    to {
+        transform: translateY(0);
+    }
+}
+/* ========== End KFC Animation CSS ========== */
+
+/* ========== Start KFC Responsive CSS ========== */
+@media (max-width: 1199px) {
+    .pf-case-page .container {
+        padding: 0 30px;
+    }
+}
+@media (max-width: 991px) {
+    .pf-case-hero {
+        padding-top: 120px;
+    }
+    .pf-case-heading {
+        padding-top: 0px;
+    }
+    .pf-case-hero-image {
+        margin-top: 35px;
+    }
+    .pf-case-gallery {
+        padding: 30px 0 80px;
+    }
+    .pf-case-gallery-grid {
+        gap: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .pf-case-page .container {
+        padding: 0 20px;
+    }
+    .pf-case-hero {
+        padding-top: 100px;
+    }
+    .pf-case-top {
+        padding-bottom: 18px;
+    }
+    .pf-case-back {
+        font-size: 13px;
+    }
+    .pf-case-heading {
+        gap: 12px;
+        padding-top: 0px;
+    }
+    .pf-case-title {
+        font-size: 30px;
+        letter-spacing: -0.5px;
+    }
+    .pf-case-intro {
+        max-width: 100%;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .pf-case-hero-image {
+        margin-top: 30px;
+    }
+    .pf-case-gallery {
+        padding: 25px 0 60px;
+    }
+    .pf-case-gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .pf-case-gallery-wide {
+        grid-column: auto;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .pf-case-page .pf-animate,
+    .pf-case-page .pf-reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        transition: none;
+    }
+    .pf-case-title > span {
+        transform: none;
+        animation: none;
+    }
+}
+/* ========== End KFC Responsive CSS ========== */
+
+/* ========== Start Divider CSS ========== */
+.pf-divider {
+    width: 100%;
+    height: 1px;
+    background: #303030;
+    margin: 30px 0;
+}
+/* ========== End Divider CSS ========== */
+
+/* Start Image Lightbox Section */
+.pf-case-hero-image img,
+.pf-case-gallery-image img {
+    cursor: zoom-in;
+}
+.pf-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.97);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+}
+.pf-lightbox.active {
+    display: flex;
+}
+.pf-lightbox-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+.pf-lightbox-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-in;
+}
+.pf-lightbox-content img.zoomed {
+    max-width: none;
+    max-height: none;
+    cursor: zoom-out;
+}
+.pf-lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2;
+}
+body.pf-lightbox-open {
+    overflow: hidden;
+}
+@media (max-width: 767px) {
+    .pf-lightbox {
+        padding: 55px 10px 20px;
+    }
+    .pf-lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 35px;
+    }
+}
+/* End Image Lightbox Section */
