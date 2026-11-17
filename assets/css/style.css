@@ -1443,7 +1443,6 @@ button {
     .pf-footer-contact a,
     .pf-footer-location {
         font-size: 14px;
-        gap: 12px;
     }
 }
 @media (prefers-reduced-motion: reduce) {
