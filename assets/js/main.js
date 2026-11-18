@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const title = item.dataset.title || "Project";
             const imageSrc = item.dataset.image || "";
             const projectLink = item.dataset.link || "";
-            const category = "Creative Campaign";
+            const category = "";
 
             const article = document.createElement("article");
             article.className = "pf-mobile-project pf-reveal";
