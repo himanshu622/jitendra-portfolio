@@ -76,6 +76,7 @@ img {
     align-items: center;
     padding-bottom: 22px;
     border-bottom: 1px solid #303030;
+    margin-bottom: 20px;
 }
 .pf-case-back {
     display: inline-flex;
@@ -101,12 +102,11 @@ img {
     flex-direction: column;
     align-items: flex-start;
     gap: 0px;
-    padding: 20px 0 0;
 }
 .pf-case-title {
     margin: 0;
     color: #080808;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     overflow: hidden;
     font-family: "Futura Bold", sans-serif;
@@ -249,7 +249,7 @@ img {
         padding-top: 0px;
     }
     .pf-case-hero-image {
-        margin-top: 35px;
+        margin-top: 10px;
     }
     .pf-case-gallery {
         padding: 30px 0 80px;
@@ -272,7 +272,7 @@ img {
         font-size: 13px;
     }
     .pf-case-heading {
-        gap: 12px;
+        gap: 0px;
         padding-top: 0px;
     }
     .pf-case-title {
@@ -285,7 +285,7 @@ img {
         line-height: 1.6;
     }
     .pf-case-hero-image {
-        margin-top: 30px;
+        margin-top: 10px;
     }
     .pf-case-gallery {
         padding: 25px 0 60px;
@@ -318,7 +318,7 @@ img {
     width: 100%;
     height: 1px;
     background: #303030;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 /* ========== End Divider CSS ========== */
 
@@ -481,3 +481,44 @@ body.pf-lightbox-open {
     }
 }
 /* ========== End Uber GIF Grid Section ========== */
+
+/* ========== Start Project Gallery Section ========== */
+.pf-project-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+}
+.pf-project-gallery-item {
+    grid-column: span 2;
+    overflow: hidden;
+    background: #dedede;
+    aspect-ratio: 1.75;
+}
+.pf-project-gallery-item:nth-child(n + 4) {
+    grid-column: span 3;
+    aspect-ratio: 1.8;
+}
+.pf-project-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+}
+@media (max-width: 767px) {
+    .pf-project-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+    }
+    .pf-project-gallery-item,
+    .pf-project-gallery-item:nth-child(n + 4) {
+        grid-column: span 1;
+        aspect-ratio: 4/3;
+    }
+    .pf-project-gallery-item:last-child {
+        grid-column: span 2;
+        aspect-ratio: 16/9;
+    }
+}
+/* ========== End Project Gallery Section ========== */
