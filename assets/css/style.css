@@ -1027,9 +1027,10 @@ button {
     margin: 0;
     color: #fff;
     font-size: 22px;
-    font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.7px;
+    font-weight: 700;
+    font-family: "Futura Bold", sans-serif;
 }
 .pf-mobile-project-arrow {
     color: #fff;
@@ -1521,3 +1522,41 @@ button {
     }
 }
 /* ========== End Back To Top CSS ========== */
+
+/* ========== Start Work Project Scroll Box ========== */
+@media (min-width: 768px) {
+    .pf-work .pf-work-list {
+        width: 70%;
+        max-width: 320px;
+        height: 520px;
+        max-height: 520px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 18px 20px;
+        scrollbar-width: thin;
+        scrollbar-color: #444 transparent;
+        overscroll-behavior: contain;
+    }
+    .pf-work .pf-work-list::-webkit-scrollbar {
+        width: 2px;
+        height: 2px;
+    }
+    .pf-work .pf-work-list::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .pf-work .pf-work-list::-webkit-scrollbar-thumb {
+        background: #444;
+        border-radius: 10px;
+    }
+    .pf-work .pf-work-item {
+        font-size: 18px;
+    }
+    .pf-work .pf-work-info small {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .pf-work .pf-work-item.active .pf-work-info small {
+        color: #fff;
+    }
+}
+/* ========== End Work Project Scroll Box ========== */

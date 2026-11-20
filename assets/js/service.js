@@ -56,3 +56,39 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && pfLightbox.classList.contains("active")) closePfLightbox();
 });
 /* End Image Lightbox Section */
+
+/* ========== Start YouTube Video Section ========== */
+document.querySelectorAll(".pf-youtube-video").forEach((box) => {
+    const url = box.dataset.youtube;
+    let id = "";
+    try {
+        const u = new URL(url);
+        if (u.hostname === "youtu.be" || u.hostname === "www.youtu.be") id = u.pathname.split("/")[1];
+        else if (
+            ["youtube.com", "www.youtube.com", "m.youtube.com", "youtube-nocookie.com", "www.youtube-nocookie.com"].includes(u.hostname)
+        ) {
+            if (u.pathname === "/watch") id = u.searchParams.get("v");
+            else if (/^\/(embed|shorts|live)\//.test(u.pathname)) id = u.pathname.split("/")[2];
+        }
+    } catch (e) {}
+    if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) return;
+    const thumbnail = box.querySelector(".pf-youtube-thumbnail");
+    const img = thumbnail.querySelector("img");
+    img.src = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+    const play = () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+        iframe.title = "YouTube Video";
+        iframe.allow = "accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture;web-share";
+        iframe.allowFullscreen = true;
+        box.replaceChildren(iframe);
+    };
+    thumbnail.addEventListener("click", play);
+    thumbnail.querySelector("button").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            play();
+        }
+    });
+});
+/* ========== End YouTube Video Section ========== */

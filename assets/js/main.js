@@ -235,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         imageLink.setAttribute("aria-label", `View ${title} project`);
-        workIndex.textContent = `${String(index + 1).padStart(2, "0")} / ${String(workItems.length).padStart(2, "0")}`;
 
         const newImage = new Image();
 
