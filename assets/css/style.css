@@ -1560,3 +1560,72 @@ button {
     }
 }
 /* ========== End Work Project Scroll Box ========== */
+
+/* ========== Start Mobile Work View Project Section ========== */
+@media (max-width: 767px) {
+    .pf-mobile-project-arrow {
+        display: none !important;
+    }
+    .pf-mobile-project-image-wrap {
+        position: relative;
+        overflow: hidden;
+    }
+    .pf-mobile-project-image-wrap::after {
+        content: "View Project";
+        position: absolute;
+        right: 12px;
+        bottom: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 36px;
+        padding: 0 15px;
+        background: #080808;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        pointer-events: none;
+        z-index: 2;
+    }
+}
+/* ========== End Mobile Work View Project Section ========== */
+
+/* ========== Start Hero Video Section ========== */
+.pf-hero-media {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 90%;
+    z-index: 2;
+    overflow: visible;
+}
+.pf-hero-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    pointer-events: none;
+}
+@media (max-width: 991px) {
+    .pf-hero-media {
+        max-width: 380px;
+        height: 70%;
+        bottom: 8%;
+    }
+}
+@media (max-width: 767px) {
+    .pf-hero-media {
+        max-width: 290px;
+        height: 75%;
+        bottom: 10%;
+    }
+    .pf-hero-video {
+        object-fit: contain;
+    }
+}
+/* ========== End Hero Video Section ========== */
