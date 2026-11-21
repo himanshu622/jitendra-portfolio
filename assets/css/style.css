@@ -1570,24 +1570,6 @@ button {
         position: relative;
         overflow: hidden;
     }
-    .pf-mobile-project-image-wrap::after {
-        content: "View Project";
-        position: absolute;
-        right: 12px;
-        bottom: 12px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 36px;
-        padding: 0 15px;
-        background: #080808;
-        color: #fff;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 0.3px;
-        pointer-events: none;
-        z-index: 2;
-    }
 }
 /* ========== End Mobile Work View Project Section ========== */
 
