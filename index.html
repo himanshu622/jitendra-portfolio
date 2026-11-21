@@ -14,9 +14,9 @@
         <main>
             <!-- ========== Start Navbar ========== -->
             <header class="pf-header">
-                <!-- <a href="#home" class="pf-logo" aria-label="Home">
-                    <img src="./assets/images/logo.png" alt="Portfolio Logo" />
-                </a> -->
+                <a href="index.html" class="pf-logo" aria-label="Home">
+                    <img src="./assets/images/logo/JItendra Sharma_white.png" alt="Portfolio Logo" />
+                </a>
                 <div class="pf-eyes" aria-hidden="true">
                     <span class="pf-eye"><span class="pf-pupil"></span></span>
                     <span class="pf-eye"><span class="pf-pupil"></span></span>
@@ -27,9 +27,9 @@
                 </button>
                 <nav class="pf-side-nav" id="pf-side-nav" aria-label="Portfolio navigation">
                     <div class="pf-mobile-nav-header">
-                        <!-- <a href="#home" class="pf-mobile-brand" aria-label="Home">
-                            <img src="./assets/images/logo.png" alt="Portfolio Logo" />
-                        </a> -->
+                        <a href="index.html" class="pf-mobile-brand" aria-label="Home">
+                            <img src="./assets/images/logo/JItendra Sharma_white.png" alt="Portfolio Logo" />
+                        </a>
                         <button class="pf-menu-close" type="button" aria-label="Close menu">
                             <span></span>
                             <span></span>
@@ -48,26 +48,22 @@
 
             <!-- ========== Start Hero Section ========== -->
             <section class="pf-hero" id="home">
-                <div class="pf-hero-background-text" aria-hidden="true">
+                <!-- <div class="pf-hero-background-text" aria-hidden="true">
                     <span class="pf-bg-first">JITENDRA</span>
                     <span class="pf-bg-second">SHARMA</span>
                     <span class="pf-bg-nickname">JEETU</span>
-                </div>
+                </div> -->
+
+                <!-- ========== Start Hero Video ========== -->
                 <div class="pf-hero-media">
-                    <video
-                        class="pf-hero-image pf-hero-video"
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        preload="metadata"
-                        poster="./assets/images/jeet.png"
-                    >
-                        <source src="./assets/video/jitu.mp4" type="video/mp4" />
+                    <video class="pf-hero-image pf-hero-video" autoplay muted loop playsinline preload="metadata">
+                        <source src="./assets/video/jitu2.mp4" type="video/mp4" />
                     </video>
                 </div>
+                <!-- ========== End Hero Video ========== -->
+
                 <div class="pf-hero-bottom">
-                    <a href="./assets/resume/resume.pdf" class="pf-resume-btn" download="Jitendra-Sharma-Resume.pdf">
+                    <a href="./assets/images/JItendra Sharma_CV_2026.pdf" class="pf-resume-btn" download="Jitendra-Sharma-Resume.pdf">
                         <span>Download Resume</span>
                         <span class="pf-resume-icon">
                             <svg
@@ -110,6 +106,17 @@
                     <h2 class="pf-work-title"><span>Work.</span></h2>
                     <div class="pf-work-layout">
                         <div class="pf-work-list">
+                            <button
+                                class="pf-work-item active"
+                                type="button"
+                                data-image="./assets/images/work/hilton/1.webp"
+                                data-title="Hilton Hotel"
+                                data-link="hiltonhotel.html"
+                                data-total="12"
+                                aria-pressed="true"
+                            >
+                                <span class="pf-work-info"><small>Hilton Hotel</small></span>
+                            </button>
                             <button
                                 class="pf-work-item active"
                                 type="button"
@@ -310,6 +317,16 @@
                                 aria-pressed="false"
                             >
                                 <span class="pf-work-info"><small>Bata</small></span>
+                            </button>
+                            <button
+                                class="pf-work-item"
+                                type="button"
+                                data-image="./assets/images/work/futureofzoo/1.webp"
+                                data-title="Future Of Zoo"
+                                data-link="futureofzoo.html"
+                                aria-pressed="false"
+                            >
+                                <span class="pf-work-info"><small>Future Of Zoo</small></span>
                             </button>
                         </div>
 
