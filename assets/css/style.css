@@ -466,6 +466,25 @@ button {
         transform: none;
     }
 }
+
+.pf-header > .container {
+    width: 100%;
+    max-width: var(--container, 1250px);
+    margin: 0 auto;
+}
+@media (min-width: 992px) {
+    .pf-logo {
+        left: max(20px, calc((100% - var(--container, 1250px)) / 2 + 20px));
+    }
+    .pf-eyes {
+        right: max(20px, calc((100% - var(--container, 1250px)) / 2 + 20px));
+    }
+    .pf-side-nav {
+        padding-left: 20px;
+        padding-right: max(105px, calc((100% - var(--container, 1250px)) / 2 + 105px));
+    }
+}
+
 /* ========== End Navbar CSS ========== */
 
 /* ========== Start Hero Section CSS ========== */
